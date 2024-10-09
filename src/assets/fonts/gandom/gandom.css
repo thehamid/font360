@@ -1,0 +1,12 @@
+@font-face {
+    font-family: Gandom;
+    font-style: normal;
+    font-weight: 900;
+    src: url("./Gandom.ttf") format("truetype");
+  }
+@font-face {
+    font-family: Gandom;
+    font-style: normal;
+    font-weight: 900;
+    src: url("./Gandom.woff") format("woff");
+  }
