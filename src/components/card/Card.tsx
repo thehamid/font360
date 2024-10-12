@@ -1,6 +1,6 @@
-import { background, Card, CardBody, Text } from "@chakra-ui/react";
+import {  Button, Card, CardBody,Text } from "@chakra-ui/react";
 import '../../styles/fonts.css'
-import { LuDownload } from "react-icons/lu";
+import { LuDownload, LuSearch } from "react-icons/lu";
 
 type FontType = {
   name: string;
@@ -17,25 +17,29 @@ export const FontCard = ({ text, font }: CardPropsType) => {
      return (
        <Card
          _hover={{
-          background: "gray.100",
-          color: "teal.500",
+          background: "teal.400",
         }}
        >
       <CardBody
         key={font.name}
-        p={5}
+        p={2}
         borderWidth={1}
         borderRadius="md"
         textAlign="center"
-          >        
-        <Text fontFamily={font.style} fontSize="lg" >
-          {text || "فارسی را پاس بداریم"}
-        </Text>
-        <Text mt={2} fontSize="sm" color="gray.500">
+         > 
+          <Text fontSize="md" textAlign="right">
           {font.name}
            </Text>
-        <LuDownload/>   
-      </CardBody>
+
+        <Text fontFamily={font.style} fontSize="2xl"  p={5}>
+          {text || "خط فارسی را هم پاس بداریم"}
+        </Text>
+        
+           {font.src ? <Button size='xs' float="left" onClick={() => open(font.src)}><LuDownload /></Button>
+             : <Button size='xs' float="left" onClick={() => open(`https://www.google.com/search?q=فونت ${font.name}`)}><LuSearch /></Button>}
+        
+         </CardBody>
+     
     </Card>
   );
 };
